@@ -14,10 +14,10 @@ int main()
     cin>>x;
     cout << "Ingrese el segundo numero, por favor: " << endl;
     cin>>y;
-    if (x%2==0 && y%2==0){
+    if (!(x%2 || y%2)){
         cout<<x<<" y "<<y<<" son multiplos de 2"<<endl;
     }
-    if (x%y==0){
+    if (!(x%y)){
         cout<<x<< " es multiplo de "<<y<<endl;
     }
     if (x*x==y)
