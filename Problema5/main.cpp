@@ -10,12 +10,10 @@ int main()
     cout<<"Ingrese el numero por favor; "<<endl;
     cin>>x;
     for (int i=1; i<=x;i++){
-        if(x%i==0)
+        if(!(x%i))
             t++;
     }
-    if (t>2)
-        cout<<x<<" no es primo"<<endl;
-    else
-        cout<<x<<" es primo"<<endl;
+    (t>2)?cout<<x<<" no es primo\n":cout<<x<<" es primo\n";
+    
     return 0;
 }
