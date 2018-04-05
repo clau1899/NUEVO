@@ -9,10 +9,6 @@ int main()
     int x;
     cout << "Ingrese su edad, por favor: " << endl;
     cin>>x;
-    if (x<18){
-        cout<<"Eres menor de edad"<<endl;
-    }
-    else
-        cout<<"Ya eres mayor de edad"<<endl;
+    (x<18)?cout<<"Eres menor de edad\n":cout<<"Ya eres mayor de edad\n";
     return 0;
 }
