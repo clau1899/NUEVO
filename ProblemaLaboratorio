@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+//Imprime los n numeros primos
+
+int main()
+{
+    int n,cont=0;
+    cout<<"Ingrese el numero por favor"<<endl;
+    cin>>n;
+    for (int j=2;j<=1000;j++){
+        int a=0;
+        for(int i=1;i<=1000;i++){
+            if(j%i==0)
+                a++;
+        }
+
+        if (a<=2){
+            cont++;
+            if (cont<=n)
+                cout<<j<<endl;
+        }
+    }
+
+    return 0;
+}
