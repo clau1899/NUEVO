@@ -1,12 +1,15 @@
 #include <iostream>
-
 using namespace std;
 
-//Implemente un programa que solicite dos numeros y evalue:
-//a) Si el primer y el segundo numero son multiplos de 2.
-//b) Si el primer numero es multiplo del segundo.
-//c) Si el primer elevado al cuadrado tiene como resultado el segundo.
-
+bool siSonMultiplosDe2 (int x, int y){
+    return (!(x%2 || y%2));
+}
+bool siSonMultiplos (int x, int y){
+    return (!(x%y));
+}
+bool alCuadrado (int x, int y){
+    return (x*x==y);
+}
 int main()
 {
     int x, y;
@@ -14,13 +17,11 @@ int main()
     cin>>x;
     cout << "Ingrese el segundo numero, por favor: " << endl;
     cin>>y;
-    if (!(x%2 || y%2)){
-        cout<<x<<" y "<<y<<" son multiplos de 2"<<endl;
-    }
-    if (!(x%y)){
-        cout<<x<< " es multiplo de "<<y<<endl;
-    }
-    if (x*x==y)
-        cout<<y<<" es el cuadrado de "<<x<<endl;
+    cout<<"son multiplos de 2?: ";
+    cout<<siSonMultiplosDe2(x,y)<<endl;
+    cout<<"Son multiplos entre ellos?: ";
+    cout<<siSonMultiplos(x,y)<<endl;
+    cout<<y<<" es el cuadrado de "<<x<<"?: ";
+    cout<<alCuadrado(x,y);
     return 0;
 }
