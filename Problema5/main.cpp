@@ -4,16 +4,24 @@ using namespace std;
 
 //Implemente un programa que solicite un numero y evalue si dicho numero es primo
 
+bool primoRecursivo(int numero, int c)
+{
+    if (numero %c==0 && numero !=2)
+        return false;
+    else if (c>numero/2)
+        return true;
+    else
+        return primoRecursivo (numero, c+1);
+}
+
 int main()
 {
-    int x,t=0;
+    int num;
     cout<<"Ingrese el numero por favor; "<<endl;
-    cin>>x;
-    for (int i=1; i<=x;i++){
-        if(!(x%i))
-            t++;
-    }
-    (t>2)?cout<<x<<" no es primo\n":cout<<x<<" es primo\n";
-    
+    cin>>num;
+    if(primoRecursivo(num,2))//si la funcion delvuelve true 1
+        cout<<"Es Primo";
+    else
+        cout<<"No es primo";
     return 0;
 }
