@@ -4,19 +4,18 @@ using namespace std;
 
 //Implemente un programa que solicite un numero n e imprima el valor factorial de dicho numero.
 
-int main()
+int factorial(int n)
 {
-    int n,a,b=1;
-    cout << "Ingrese el valor por favor: " << endl;
-    cin>>n;
-    if (n==0)
-        cout<<"1"<<endl;
-    for (int i=1;i<=n;i++){
-        a=i*b;
-        b=a;
+    if(n == 1)
+        return 1;
+    else
+        return n*factorial(n-1);
+}
+int main( ){
 
-    }
-    cout<<n<<"!= "<<a<<endl;
-
+    int n;
+    cout << "Introduce un numero entero: \n";
+    cin >> n;
+    cout<<factorial (n);
     return 0;
 }
