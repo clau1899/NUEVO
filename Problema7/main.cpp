@@ -1,19 +1,19 @@
-#include <iostream>
+#include<iostream>
 
 using namespace std;
 
-//Implemente un programa que solicite un numero de cinco digitos e imprima los digitos separados por un caracter de tabulacion.
+int imprime(int numero,int cont=1){
+    if(cont==100000)
+        return 0;
+    int a=numero-(numero%(10000/cont));
+    cout<<a/(10000/cont)<<"\t";
+    return imprime(numero-a,cont*=10);
+}
+int main( ){
 
-int main()
-{
-    int x;
-    cout << "Ingrese un numero de 5 digitos: " << endl;
-    cin>>x;
-    cout<<x/10000<<'\t';
-    cout<<(x%10000)/1000<<'\t';
-    cout<<((x%10000)%1000)/100<<'\t';
-    cout<<(((x%10000)%1000)%100)/10<<'\t';
-    cout<<(((x%10000)%1000)%100)%10<<'\t';
+    int n;
+    cout<<" INGRESE NUMERO: ";
+    cin>>n;
+    imprime(n);
     return 0;
 }
-
