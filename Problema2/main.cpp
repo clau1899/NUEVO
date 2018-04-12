@@ -4,20 +4,23 @@ using namespace std;
 
 //Implementar un programa que solicite un numero n e imprima los numero desde el 1 hasta n separados por comas.
 //OJO, despues del  ́ultimo n ́umero no debe imprimir la ’,’.
-void hastaN (int x)
+
+void imprimeHastaN(int numero,int cont=1)
 {
-    for (int i=1;i<=x;i++){
-        cout<<i;
-        if (i<x){
+    if (cont>numero)
+        return;
+    if (numero>=cont){
+        cout<<cont;
+        if (cont<numero)
             cout<<", ";
-        }
+        return imprimeHastaN(numero,cont+1);
     }
 }
 int main()
 {
-    int x;
-    cout << "Ingrese un numero por favor" << endl;
+    int x,cont;
+    cout << "Ingrese un numero" << endl;
     cin>>x;
-    hastaN(x);19
+    imprimeHastaN(x);
     return 0;
 }
